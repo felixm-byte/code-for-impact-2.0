@@ -1,0 +1,325 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Code for Impact Hackathon - Register Now!</title>
+  <meta name="description" content="Code for Impact is an online hackathon empowering young creators to build technology that makes a difference. Learn, connect, and create for social good." />
+
+  <!-- 🌿 Social / SEO Meta -->
+  <meta property="og:title" content="Code for Impact - Online Hackathon" />
+  <meta property="og:description" content="Join the online hackathon empowering creators to make a difference through tech. Workshops, mentorship & prizes." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://codeforimpact.dev/" />
+  <meta property="og:image" content="https://codeforimpact.dev/og-image.jpg" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Code for Impact — Online Hackathon" />
+  <meta name="twitter:description" content="Build something meaningful. Code for Impact brings together learners, mentors, and makers for positive change." />
+  <meta name="twitter:image" content="https://codeforimpact.dev/og-image.jpg" />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Stack+Sans+Notch:wght@200..700&family=Stack+Sans+Text:wght@200..700&display=swap" rel="stylesheet">
+<link rel="icon" type="image/png" href="content/favicon/favicon-96x96.png" sizes="96x96" />
+<link rel="icon" type="image/svg+xml" href="content/favicon/favicon.svg" />
+<link rel="shortcut icon" href="content/favicon/favicon.ico" />
+<link rel="apple-touch-icon" sizes="180x180" href="content/favicon/apple-touch-icon.png" />
+<meta name="apple-mobile-web-app-title" content="Code for Impact" />
+<link rel="manifest" href="content/favicon/site.webmanifest" />
+  <style>
+    :root {
+      --bg:#f8faf9; 
+      --card:#ffffff;
+      --text:#1e293b;
+      --muted:#64748b;
+      --accent:#10b981; /* green */
+      --radius:14px;
+      --maxw:960px;
+      font-family: Stack Sans Text, system-ui, sans-serif;
+    }
+    *{box-sizing:border-box;}
+    body {
+      margin:0;
+      background:var(--bg);
+      color:var(--text);
+      -webkit-font-smoothing:antialiased;
+      line-height:1.55;
+
+    }
+    .wrap {
+      max-width:var(--maxw);
+      margin:auto;
+      padding:24px;
+      display:flex;
+      flex-direction:column;
+      gap:40px;
+    }
+    header {
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      align-items:center;
+      gap:16px;
+    }
+    .logo {
+      display:flex;
+      align-items:center;
+      gap:10px;
+      font-weight:800;
+      font-size:20px;
+      color:var(--text);
+    }
+    .logo .mark {
+      width:46px;
+      height:46px;
+      /* background:linear-gradient(135deg,var(--accent),#a7f3d0);*/
+      background: #ffffff;
+      border-radius:12px;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      color:#065f46;
+      font-weight:800;
+
+    }
+    nav a {
+      color:var(--muted);
+      text-decoration:none;
+      margin-left:16px;
+      font-weight:600;
+      transition:color 0.2s ease;
+    }
+    nav a:hover {
+      color:var(--accent);
+    }
+    nav a.cta {
+      background:var(--accent);
+      color:white;
+      padding:10px 14px;
+      border-radius:10px;
+      font-weight:700;
+    }
+
+    h1,h2,h3{margin:0 0 10px 0;}
+    p{margin:0 0 10px 0;}
+    .card {
+      background:var(--card);
+      border-radius:var(--radius);
+      padding:20px;
+      box-shadow:0 4px 16px rgba(0,0,0,0.05);
+    }
+    .hero {
+      display:flex;
+      flex-direction:column;
+      gap:20px;
+      text-align:center;
+    }
+    .hero h1 {
+      font-size:2rem;
+      color:#064e3b;
+    }
+    .leaf-badge {
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      background:#ecfdf5;
+      border-radius:999px;
+      padding:6px 12px;
+      font-size:14px;
+      color:#047857;
+      font-weight:600;
+      justify-content:center;
+      margin:auto;
+    }
+    .section{display:flex;flex-direction:column;gap:16px;}
+    .grid {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+      gap:16px;
+    }
+    .feature, .proj {
+      background:#f9fafb;
+      border-radius:var(--radius);
+      padding:18px;
+      border:1px solid #e2e8f0;
+    }
+    .feature h3{font-size:18px;margin-bottom:6px;color:#065f46;}
+    .muted{color:var(--muted);}
+    .projects {
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+      gap:18px;
+    }
+    .proj img {
+      width:100%;
+      border-radius:10px;
+      margin-bottom:8px;
+    }
+    form {
+      display:grid;
+      gap:10px;
+    }
+    input,select {
+      padding:10px;
+      border-radius:10px;
+      border:1px solid #cbd5e1;
+      background:white;
+      color:var(--text);
+      width:100%;
+    }
+    button.btn {
+      background:var(--accent);
+      color:white;
+      font-weight:700;
+      border:none;
+      border-radius:10px;
+      padding:10px 16px;
+      cursor:pointer;
+      transition:background 0.2s ease;
+    }
+    button.btn:hover {
+      background:#059669;
+    }
+    footer {
+      text-align:center;
+      border-top:1px solid #e2e8f0;
+      padding-top:16px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    a{color:var(--accent);}
+    @media (max-width:640px){
+      h1{font-size:1.6rem;}
+    }
+    /* Default: desktop scale up 10% */
+body {
+  overflow-x: hidden;
+}
+
+/* Desktop: scale up 10% */
+.wrap {
+  transform: scale(1.1);
+  transform-origin: top center;
+  width: calc(100% / 1.1);
+  margin: 0 auto;
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+
+/* Mobile: scale down 10% and re-center */
+@media (max-width: 640px) {
+  .wrap {
+    transform: scale(0.9);
+    transform-origin: top center;
+    width: calc(100% / 0.9);
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+  }
+}
+.wrap {
+  transition: transform 0.3s ease, width 0.3s ease;
+}
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo">
+        <div class="mark"><img src="content/logo-transparent.png" alt="Code for Impact logo" width="40" height="40"></div>
+        Code for Impact
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#schedule">Schedule</a>
+        <a href="#projects">Projects</a>
+        <a href="#signup" class="cta">Join</a>
+      </nav>
+    </header>
+
+    <section class="hero">
+      <h1 style="font-family: Stack Sans Notch">Make Something That Matters</h1>
+      <p class="muted">A free, beginner-friendly hackathon taking place <B>online across 3 days</B> where you learn how to design impactful ideas, then build them — apps, games, or other tech projects.</p>
+      <div class="leaf-badge">
+        Supported by
+        <img src="https://images.squarespace-cdn.com/content/v1/60f0431e9044b65ce57482e1/9032eee9-b2b9-4c87-975b-872218eadbf3/Leaf+logo+with+tagline_GREEN.png?format=1500w" alt="Leaf logo" width="43" height="12" position="relative" top="-10" h-align="center">
+      </div>
+      <a href="#signup" class="cta" style="margin:auto;background:var(--accent);padding:10px 16px;border-radius:10px;color:white;font-weight:800;text-decoration:none;">Register Now</a>
+    </section>
+
+    <section id="about" class="section card">
+      <h2>About the Hackathon</h2>
+      <p class="muted">Code for Impact empowers young developers and creatives to build technology that drives social good. Join workshops, mentorship sessions, and a two-day build sprint to bring your ideas to life.</p>
+      <div class="grid">
+        <div class="feature">
+          <h3>Workshops</h3>
+          <p class="muted">Hands-on sessions and guidance on creating impactful projects.</p>
+        </div>
+        <div class="feature">
+          <h3>Collaboration</h3>
+          <p class="muted">Team up with other passionate young people and build together!</p>
+        </div>
+        <div class="feature">
+          <h3>Showcase</h3>
+          <p class="muted">Submit your project and compete for <a href="#prizes">prizes</a> and recognition.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="schedule" class="section card">
+      <h2>Schedule</h2>
+      <ul class="muted">
+        <li><strong>Day 1 — Learn & Team Up:</strong> Workshops + ideation sessions.</li>
+        <li><strong>Day 2 — Build & Demo:</strong> Coding, mentorship, and final presentations.</li>
+      </ul>
+      <p class="muted">Dates: <strong>5th-7th December</strong></p>
+    </section>
+
+    <section id="prizes" class="section card">
+      <h2>Prizes</h2>
+      <a href="https://leaf.courses"><h3>Leaf Courses</h3></a>
+      <p class="muted">Leaf runs highly selective programs on AI safety, ethics, and real-world impact — the kind of courses ambitious students take before heading to top universities like Oxbridge and the Ivy League. They’re offering 3 exclusive spots in their next cohort to standout Code for Impact participants. This is a rare chance to join a program known for shaping serious, impact-driven thinkers.</p>
+      <h3>More prizes coming soon!</h3>
+    </section>
+
+    <section id="projects" class="section card">
+      <h2>2024 Winning Projects</h2>
+      <div class="projects">
+        <div class="proj">
+          <img src="content\speechease.jpeg" alt="SpeechEase project screenshot"
+          <strong>SpeechEase</strong>
+          <p class="muted">AI-powered English practice platform — 1st place.</p>
+        </div>
+        <div class="proj">
+          <img src="content/ignition-device.png" alt="Ignition Interlock Device project">
+          <strong>Ignition Interlock Device</strong>
+          <p class="muted">Prototype to reduce drunk driving — 2nd place.</p>
+        </div>
+         <a href="https://code-for-impact.devpost.com/" class="cta" style="margin:auto;background:var(--accent);padding:10px 16px;border-radius:10px;color:white;font-weight:800;text-decoration:none;">View all entries on DevPost</a>
+      </div>
+    </section>
+
+    <section id="signup" class="section card">
+      <h2>Sign Up</h2>
+      <p class="muted">Register your interest and we’ll email you the next event details and an invitation to our online community.</p>
+      <iframe style="border:none;width:100%;" id="code-for-impact-pre-registration-fxtt1z" src="https://opnform.com/forms/code-for-impact-pre-registration-fxtt1z"></iframe><script type="text/javascript" onload="initEmbed('code-for-impact-pre-registration-fxtt1z')" src="https://opnform.com/widgets/iframe.min.js"></script>
+    </section>
+
+    <footer>
+      © <span id="year"></span> Code for Impact — Supported by Leaf • Built by students for learning & social good <br> Fiscally sponsored by HCB, a US 501(c)3 nonprofit
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    function submitForm(){
+      const btn = document.querySelector('button.btn');
+      btn.textContent = 'Thanks for joining!';
+      btn.disabled = true;
+      setTimeout(()=>{btn.textContent='Join the waitlist'; btn.disabled=false;},4000);
+    }
+  </script>
+</body>
+</html>
